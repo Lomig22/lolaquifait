@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C'est Lola qui fait — Rénovation & finitions durables · Mérignac (33)</title>
+<meta name="description" content="C'est Lola qui fait — auto-entrepreneuse en rénovation et finitions à Mérignac (33). Peinture, relooking de portes et meubles, pose de cuisine. Des rénovations durables, pensées dans le détail. Devis en DM.">
+
+<!-- ===== GOOGLE FONTS ===== -->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Epilogue:wght@300;400;500;600&display=swap');
+
+/* ===== VARIABLES ===== */
+:root{
+  --sand:    #F2EDE5;  /* fond principal — sable chaud */
+  --petrol:  #1B3A4B;  /* accent signature — bleu pétrole */
+  --bark:    #3A2D22;  /* texte principal — écorce brun foncé */
+  --linen:   #E8E0D5;  /* sections alternées */
+  --dust:    #9A8E84;  /* texte secondaire */
+  --shaving: #C9A870;  /* accent secondaire — copeau doré */
+
+  --maxw: 1180px;
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ===== RESET ===== */
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; scroll-padding-top:84px; }
+body{
+  font-family:'Epilogue', sans-serif;
+  font-weight:400;
+  background:var(--sand);
+  color:var(--bark);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{ max-width:100%; display:block; }
+a{ text-decoration:none; color:inherit; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+
+/* ===== TYPO HELPERS ===== */
+.serif{ font-family:'DM Serif Text', serif; font-weight:400; }
+.eyebrow{
+  font-family:'Epilogue', sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  color:var(--petrol);
+  font-size:12px;
+}
+.section{ padding:96px 24px; }
+.wrap{ max-width:var(--maxw); margin:0 auto; }
+.section-head{ max-width:640px; margin-bottom:52px; }
+.section-head h2{
+  font-family:'DM Serif Text', serif;
+  font-size:clamp(28px, 4vw, 42px);
+  color:var(--bark);
+  line-height:1.15;
+  margin-top:14px;
+}
+.section-head p{
+  color:var(--dust);
+  font-weight:300;
+  margin-top:14px;
+  font-size:16px;
+}
+
+/* ===== COPEAUX SVG BACKGROUND (sections --linen) ===== */
+.chips{
+  background-color:var(--linen);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='%23C9A870' fill-opacity='0.07'%3E%3Cpath transform='rotate(-18 50 50)' d='M20,80 C30,60 50,55 60,50 C70,45 80,40 75,30 C68,20 55,22 45,28 C35,34 25,50 20,80 Z'/%3E%3Cpath transform='rotate(22 150 40)' d='M120,60 C130,42 150,38 160,34 C172,30 182,24 178,16 C172,8 158,12 148,18 C138,24 126,40 120,60 Z'/%3E%3Cpath transform='rotate(-8 60 150)' d='M40,170 C50,150 70,146 80,142 C92,138 102,130 98,122 C92,114 78,118 68,124 C58,130 46,150 40,170 Z'/%3E%3Cpath transform='rotate(30 160 150)' d='M140,168 C150,150 168,146 176,142 C186,138 194,132 190,124 C184,116 172,120 164,126 C154,132 146,150 140,168 Z'/%3E%3Cpath transform='rotate(12 110 110)' d='M92,124 C102,106 120,102 128,98 C138,94 146,88 142,80 C136,72 124,76 116,82 C106,88 98,106 92,124 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:200px 200px;
+}
+
+/* ===== HERO copeaux discrets sur sable ===== */
+.hero-chips{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg fill='%23C9A870' fill-opacity='0.04'%3E%3Cpath transform='rotate(-18 50 50)' d='M20,80 C30,60 50,55 60,50 C70,45 80,40 75,30 C68,20 55,22 45,28 C35,34 25,50 20,80 Z'/%3E%3Cpath transform='rotate(22 150 40)' d='M120,60 C130,42 150,38 160,34 C172,30 182,24 178,16 C172,8 158,12 148,18 C138,24 126,40 120,60 Z'/%3E%3Cpath transform='rotate(-8 60 150)' d='M40,170 C50,150 70,146 80,142 C92,138 102,130 98,122 C92,114 78,118 68,124 C58,130 46,150 40,170 Z'/%3E%3Cpath transform='rotate(30 160 150)' d='M140,168 C150,150 168,146 176,142 C186,138 194,132 190,124 C184,116 172,120 164,126 C154,132 146,150 140,168 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat:repeat;
+  background-size:200px 200px;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:var(--sand);
+  transition:box-shadow 0.3s var(--ease);
+}
+header.scrolled{ box-shadow:0 2px 12px rgba(58,45,34,0.08); }
+.nav{
+  max-width:var(--maxw); margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px;
+}
+.logo{ display:flex; align-items:baseline; gap:7px; }
+.logo .l1{ font-family:'DM Serif Text', serif; font-style:italic; color:var(--bark); font-size:22px; }
+.logo .l2{ font-family:'Epilogue', sans-serif; font-weight:400; color:var(--dust); font-size:16px; }
+.nav-links{ display:flex; align-items:center; gap:28px; }
+.nav-links a{
+  font-family:'Epilogue', sans-serif; font-weight:500; font-size:13px;
+  color:var(--dust); transition:color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active{ color:var(--petrol); }
+.btn-dm{
+  background:var(--petrol); color:var(--sand);
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:13px;
+  padding:10px 20px; border-radius:4px;
+  transition:transform 0.2s var(--ease), opacity 0.2s;
+}
+.btn-dm:hover{ transform:translateY(-1px); opacity:0.94; }
+.burger{ display:none; flex-direction:column; gap:5px; padding:6px; }
+.burger span{ width:24px; height:2px; background:var(--bark); transition:0.3s; }
+
+/* ===== MOBILE OVERLAY ===== */
+.overlay{
+  position:fixed; inset:0; z-index:99; background:var(--sand);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:30px; transform:translateX(100%); transition:transform 0.4s var(--ease);
+}
+.overlay.open{ transform:translateX(0); }
+.overlay a{
+  font-family:'DM Serif Text', serif; font-size:30px; color:var(--bark);
+  opacity:0; transform:translateY(20px); transition:0.4s var(--ease);
+}
+.overlay.open a{ opacity:1; transform:translateY(0); }
+.overlay.open a:nth-child(1){ transition-delay:0.1s; }
+.overlay.open a:nth-child(2){ transition-delay:0.16s; }
+.overlay.open a:nth-child(3){ transition-delay:0.22s; }
+.overlay.open a:nth-child(4){ transition-delay:0.28s; }
+.overlay.open a:nth-child(5){ transition-delay:0.34s; }
+.overlay-close{ position:absolute; top:22px; right:24px; font-size:34px; color:var(--bark); line-height:1; }
+
+/* ===== HERO ===== */
+.hero{ padding:148px 24px 96px; }
+.hero-inner{
+  max-width:var(--maxw); margin:0 auto;
+  display:grid; grid-template-columns:55% 45%; gap:48px; align-items:center;
+}
+.hero h1{
+  font-family:'DM Serif Text', serif; color:var(--bark);
+  line-height:1.1; margin:18px 0;
+}
+.hero h1 .line1{ font-size:clamp(30px, 4.5vw, 46px); display:block; }
+.hero h1 .line2{ font-size:clamp(44px, 7vw, 80px); color:var(--petrol); font-style:italic; display:block; }
+.hero .sub{ color:var(--dust); font-weight:300; max-width:440px; font-size:17px; margin-bottom:18px; }
+.hero .brandquote{
+  font-family:'DM Serif Text', serif; font-style:italic; color:var(--shaving);
+  font-size:16px; margin-bottom:28px;
+}
+.cta-row{ display:flex; gap:14px; flex-wrap:wrap; }
+.btn-primary{
+  background:var(--petrol); color:var(--sand);
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:15px;
+  padding:14px 32px; border-radius:4px;
+  transition:transform 0.2s var(--ease), opacity 0.2s;
+}
+.btn-primary:hover{ transform:translateY(-2px); opacity:0.94; }
+.btn-outline{
+  background:transparent; color:var(--bark); border:1.5px solid var(--bark);
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:15px;
+  padding:14px 32px; border-radius:4px;
+  transition:background 0.25s, color 0.25s;
+}
+.btn-outline:hover{ background:var(--bark); color:var(--sand); }
+.hero-portrait{
+  width:100%; max-width:380px; aspect-ratio:1/1; border-radius:50%;
+  background:var(--linen); border:3px solid var(--shaving);
+  margin:0 auto; display:flex; align-items:center; justify-content:center;
+  color:var(--dust); font-weight:300; font-size:14px; text-align:center; padding:24px;
+}
+
+/* ===== SERVICES ===== */
+.cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; }
+.card{
+  background:var(--sand); border-radius:4px; border-top:3px solid var(--petrol);
+  padding:28px 24px;
+  transition:transform 0.3s var(--ease), border-top-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card:hover{ transform:translateY(-2px); border-top-color:var(--shaving); box-shadow:0 8px 24px rgba(58,45,34,0.08); }
+.card .ico{ margin-bottom:16px; }
+.card h3{ font-family:'DM Serif Text', serif; font-size:20px; color:var(--bark); margin-bottom:10px; }
+.card p{ font-weight:300; color:var(--dust); font-size:13px; line-height:1.65; margin-bottom:16px; }
+.card .tag{
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:10px;
+  text-transform:uppercase; letter-spacing:0.1em; color:var(--petrol);
+}
+
+/* ===== AVANT / APRÈS ===== */
+.ba-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; }
+.ba-pair-wrap{ display:flex; flex-direction:column; }
+.ba-pair{ display:flex; align-items:stretch; gap:10px; }
+.ba-box{
+  flex:1; aspect-ratio:3/4; border-radius:4px; position:relative;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--dust); font-weight:300; font-size:13px; text-align:center; padding:16px;
+}
+.ba-before{ background:#DED5C7; }
+.ba-after{ background:rgba(27,58,75,0.15); }
+.ba-label{
+  position:absolute; top:12px; left:12px;
+  font-family:'Epilogue', sans-serif; font-weight:700; font-size:11px;
+  text-transform:uppercase; letter-spacing:0.12em;
+}
+.ba-before .ba-label{ color:var(--dust); }
+.ba-after .ba-label{ color:var(--petrol); }
+.ba-arrow{
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Epilogue', sans-serif; font-weight:700; font-size:22px; color:var(--petrol);
+  flex:0 0 22px;
+}
+.ba-caption{ font-weight:300; color:var(--dust); font-size:12px; margin-top:14px; text-align:center; }
+.ba-cta{ text-align:center; margin-top:48px; }
+.ba-cta a{
+  font-family:'DM Serif Text', serif; font-style:italic; color:var(--petrol); font-size:19px;
+  border-bottom:1px solid transparent; transition:border-color 0.25s;
+}
+.ba-cta a:hover{ border-bottom-color:var(--petrol); }
+
+/* ===== PROCESSUS ===== */
+.steps{ display:grid; grid-template-columns:repeat(3, 1fr); gap:30px; position:relative; }
+.step{ position:relative; }
+.step .num{
+  font-family:'DM Serif Text', serif; font-size:46px; color:var(--shaving);
+  line-height:1; margin-bottom:14px;
+}
+.step h3{ font-family:'DM Serif Text', serif; font-size:21px; color:var(--bark); margin-bottom:10px; }
+.step p{ font-weight:300; color:var(--dust); font-size:14px; }
+.steps .connector{
+  position:absolute; top:24px; left:16%; right:16%; height:1px;
+  background:var(--shaving); opacity:0.3; z-index:0;
+}
+
+/* ===== À PROPOS ===== */
+.about-inner{ display:grid; grid-template-columns:55% 45%; gap:52px; align-items:center; }
+.about h2{ font-family:'DM Serif Text', serif; font-style:italic; font-size:clamp(30px,4vw,40px); color:var(--bark); margin:14px 0 22px; }
+.about p{ font-weight:300; color:var(--dust); line-height:1.9; margin-bottom:18px; }
+.about-values{
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:13px;
+  text-transform:uppercase; letter-spacing:0.12em; color:var(--shaving); margin-top:8px;
+}
+.about-portrait{
+  width:100%; max-width:360px; aspect-ratio:1/1; border-radius:50%;
+  background:var(--linen); border:2px solid var(--shaving); margin:0 auto;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--dust); font-weight:300; font-size:14px; text-align:center; padding:24px;
+}
+
+/* ===== TÉMOIGNAGES ===== */
+.testi-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:0; }
+.testi{ padding:8px 30px; }
+.testi:not(:last-child){ border-right:1px solid rgba(154,142,132,0.15); }
+.testi .stars{ font-family:'Epilogue', sans-serif; color:var(--petrol); font-size:15px; letter-spacing:2px; margin-bottom:16px; }
+.testi blockquote{
+  font-family:'DM Serif Text', serif; font-style:italic; font-size:15px;
+  color:rgba(58,45,34,0.85); line-height:1.7; margin-bottom:20px;
+}
+.testi .dash{ width:32px; height:2px; background:var(--shaving); margin-bottom:14px; }
+.testi cite{
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:11px; font-style:normal;
+  text-transform:uppercase; letter-spacing:0.08em; color:var(--dust);
+}
+
+/* ===== CONTACT ===== */
+.contact{ background:var(--petrol); color:var(--sand); }
+.contact .eyebrow{ color:var(--shaving); }
+.contact h2{ font-family:'DM Serif Text', serif; font-style:italic; font-size:clamp(30px,4.5vw,46px); color:var(--sand); margin-top:14px; }
+.contact .sub{ font-weight:300; color:rgba(242,237,229,0.75); margin-top:12px; font-size:17px; }
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:48px; }
+.dm-block{
+  background:rgba(242,237,229,0.06); border:1px solid rgba(242,237,229,0.2);
+  border-radius:4px; padding:28px;
+}
+.btn-dm-big{
+  display:block; width:100%; text-align:center;
+  background:var(--sand); color:var(--petrol);
+  font-family:'DM Serif Text', serif; font-size:18px;
+  padding:16px; border-radius:4px;
+  transition:transform 0.2s var(--ease), opacity 0.2s;
+}
+.btn-dm-big:hover{ transform:translateY(-2px); opacity:0.95; }
+.or-sep{ text-align:center; color:rgba(242,237,229,0.5); margin:18px 0; font-size:14px; }
+.btn-tiktok{
+  display:block; width:100%; text-align:center;
+  background:transparent; border:1px solid rgba(242,237,229,0.4); color:rgba(242,237,229,0.8);
+  font-family:'Epilogue', sans-serif; font-weight:500; font-size:15px;
+  padding:14px; border-radius:4px; transition:border-color 0.25s, color 0.25s;
+}
+.btn-tiktok:hover{ border-color:var(--sand); color:var(--sand); }
+.dm-info{ margin-top:24px; color:rgba(242,237,229,0.7); font-weight:300; font-size:14px; line-height:1.9; }
+
+form .field{ margin-bottom:20px; }
+form label{
+  display:block; font-family:'Epilogue', sans-serif; font-weight:500; font-size:10px;
+  text-transform:uppercase; letter-spacing:0.15em; color:var(--shaving); margin-bottom:6px;
+}
+form input, form select, form textarea{
+  width:100%; background:transparent; border:none;
+  border-bottom:1px solid rgba(242,237,229,0.3);
+  padding:12px 0; color:var(--sand); font-family:'Epilogue', sans-serif; font-size:15px;
+  transition:border-color 0.25s;
+}
+form input::placeholder, form textarea::placeholder{ color:rgba(242,237,229,0.45); }
+form select option{ color:var(--bark); }
+form input:focus, form select:focus, form textarea:focus{ outline:none; border-bottom-color:var(--shaving); }
+form textarea{ resize:vertical; min-height:80px; }
+.btn-submit{
+  width:100%; background:var(--sand); color:var(--petrol);
+  font-family:'Epilogue', sans-serif; font-weight:600; font-size:15px;
+  padding:15px; border-radius:4px; margin-top:8px;
+  transition:transform 0.2s var(--ease), opacity 0.2s;
+}
+.btn-submit:hover{ transform:translateY(-2px); opacity:0.95; }
+
+/* ===== FOOTER ===== */
+footer{ background:var(--bark); border-top:2px solid var(--petrol); padding:52px 24px 32px; text-align:center; }
+.foot-logo{ display:flex; align-items:baseline; justify-content:center; gap:7px; margin-bottom:14px; }
+.foot-logo .l1{ font-family:'DM Serif Text', serif; font-style:italic; color:var(--sand); font-size:22px; }
+.foot-logo .l2{ font-family:'Epilogue', sans-serif; color:var(--shaving); font-size:16px; }
+.foot-tag{ font-family:'DM Serif Text', serif; font-style:italic; color:var(--dust); font-size:15px; margin-bottom:22px; }
+.foot-social{ display:flex; gap:20px; justify-content:center; margin-bottom:24px; }
+.foot-social a{ color:var(--shaving); transition:opacity 0.2s; }
+.foot-social a:hover{ opacity:0.7; }
+.foot-sep{ width:100%; max-width:200px; height:1px; background:rgba(27,58,75,0.3); margin:0 auto 22px; }
+.foot-copy{ color:var(--dust); font-size:13px; font-weight:300; }
+.foot-credit{ color:var(--dust); font-size:11px; font-weight:300; margin-top:8px; opacity:0.7; }
+
+/* ===== REVEAL ===== */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.revealed{ opacity:1; transform:translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1024px){
+  .hero-inner, .about-inner{ grid-template-columns:1fr; }
+  .hero-portrait, .about-portrait{ order:-1; max-width:300px; }
+  .cards, .ba-grid, .steps{ grid-template-columns:repeat(2,1fr); }
+  .steps .connector{ display:none; }
+  .testi-grid{ grid-template-columns:1fr; }
+  .testi{ border-right:none; border-bottom:1px solid rgba(154,142,132,0.15); padding:24px 0; }
+  .testi:last-child{ border-bottom:none; }
+  .contact-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:768px){
+  .nav-links, .btn-dm.desktop{ display:none; }
+  .burger{ display:flex; }
+  .section{ padding:72px 20px; }
+  .hero{ padding:128px 20px 72px; }
+  .cards, .ba-grid, .steps{ grid-template-columns:1fr; }
+  .ba-pair{ flex-direction:column; gap:14px; }
+  .ba-arrow{ transform:rotate(90deg); flex-basis:auto; }
+}
+@media (max-width:480px){
+  .cta-row{ flex-direction:column; }
+  .btn-primary, .btn-outline{ text-align:center; }
+  .hero h1 .line2{ font-size:clamp(40px,13vw,56px); }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+  .card, .btn-primary, .btn-outline, .btn-dm, .btn-dm-big, .btn-submit, .btn-tiktok,
+  header, .overlay, .overlay a{ transition:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <nav class="nav">
+    <a href="#hero" class="logo" aria-label="C'est Lola qui fait — accueil">
+      <span class="l1">C'est Lola</span><span class="l2">qui fait</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Ce que je fais</a></li>
+      <li><a href="#avant-apres">Avant/Après</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener" class="btn-dm desktop" aria-label="Demander un devis en DM Instagram">Devis en DM</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- ===== MOBILE OVERLAY ===== -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Menu de navigation">
+  <button class="overlay-close" id="overlayClose" aria-label="Fermer le menu">&times;</button>
+  <a href="#services">Ce que je fais</a>
+  <a href="#avant-apres">Avant/Après</a>
+  <a href="#apropos">À propos</a>
+  <a href="#contact">Contact</a>
+  <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener">Devis en DM</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero hero-chips" id="hero">
+  <div class="hero-inner">
+    <div class="reveal">
+      <p class="eyebrow">Rénovation &amp; finitions · Mérignac (33)</p>
+      <h1>
+        <span class="line1">Je rénove,</span>
+        <span class="line2">vous vivez.</span>
+      </h1>
+      <p class="sub">Rénovation complète, peinture, relooking de portes et meubles. Des travaux durables, pensés dans le détail, à Mérignac et en Gironde.</p>
+      <p class="brandquote">✨ Des rénovations durables, pensées dans le détail.</p>
+      <div class="cta-row">
+        <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener" class="btn-primary" aria-label="Demander un devis en DM Instagram">📩 Devis en DM</a>
+        <a href="#avant-apres" class="btn-outline" aria-label="Voir les réalisations">Voir les réalisations</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="hero-portrait">Portrait de Lola<br>(à remplacer)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section chips" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Ce que je fais</p>
+      <h2>Du gros œuvre à la dernière finition.</h2>
+    </div>
+    <div class="cards">
+
+      <div class="card reveal">
+        <div class="ico">🪣</div>
+        <h3>Peinture &amp; finitions</h3>
+        <p>Murs, plafonds, boiseries. Préparation des supports, impression et finition soignée. Couleurs sur mesure.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ico">🚪</div>
+        <h3>Relooking de portes</h3>
+        <p>Décapage, ponçage, peinture. La porte bleue pétrole de votre maison, c'est possible. Toutes tailles.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ico">🪑</div>
+        <h3>Relooking de meubles</h3>
+        <p>Médium, peinture à la craie, vernis. Donner une seconde vie à un meuble plutôt que de le jeter.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ico">🔨</div>
+        <h3>Rénovation complète</h3>
+        <p>Arrachage, préparation des murs, gros œuvre léger. Du début à la fin, je coordonne et j'exécute.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ico">🍳</div>
+        <h3>Pose de cuisine</h3>
+        <p>Montage et installation de cuisines équipées. Finitions soignées, calfeutrage et ajustements inclus.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+      <div class="card reveal">
+        <div class="ico">🌱</div>
+        <h3>Rénovation durable</h3>
+        <p>Choix de matériaux durables et raisonnés, récupération quand c'est possible. Rénover sans gâcher.</p>
+        <span class="tag">Devis en DM</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVANT / APRÈS ===== -->
+<section class="section" id="avant-apres">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Avant / Après</p>
+      <h2>Le travail parle.</h2>
+      <p>Chaque chantier filmé et documenté — sur Instagram et TikTok.</p>
+    </div>
+    <div class="ba-grid">
+
+      <div class="ba-pair-wrap reveal">
+        <div class="ba-pair">
+          <div class="ba-box ba-before"><span class="ba-label">Avant</span>Photo avant</div>
+          <div class="ba-arrow" aria-hidden="true">→</div>
+          <div class="ba-box ba-after"><span class="ba-label">Après</span>Photo après</div>
+        </div>
+        <p class="ba-caption">Porte d'entrée — Relooking bleu pétrole</p>
+      </div>
+
+      <div class="ba-pair-wrap reveal">
+        <div class="ba-pair">
+          <div class="ba-box ba-before"><span class="ba-label">Avant</span>Photo avant</div>
+          <div class="ba-arrow" aria-hidden="true">→</div>
+          <div class="ba-box ba-after"><span class="ba-label">Après</span>Photo après</div>
+        </div>
+        <p class="ba-caption">Couloir — Rénovation complète</p>
+      </div>
+
+      <div class="ba-pair-wrap reveal">
+        <div class="ba-pair">
+          <div class="ba-box ba-before"><span class="ba-label">Avant</span>Photo avant</div>
+          <div class="ba-arrow" aria-hidden="true">→</div>
+          <div class="ba-box ba-after"><span class="ba-label">Après</span>Photo après</div>
+        </div>
+        <p class="ba-caption">Meuble — Relooking médium et peinture</p>
+      </div>
+
+    </div>
+    <div class="ba-cta reveal">
+      <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener" aria-label="Voir tous les chantiers sur Instagram et TikTok">Voir tous les chantiers sur Instagram et TikTok →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESSUS ===== -->
+<section class="section chips" id="processus">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Comment ça se passe</p>
+      <h2>Simple, direct, sans prise de tête.</h2>
+    </div>
+    <div class="steps">
+      <div class="connector" aria-hidden="true"></div>
+      <div class="step reveal">
+        <div class="num">1</div>
+        <h3>DM ou message</h3>
+        <p>Décrivez votre projet par DM Instagram ou message direct. Photos de l'espace et dimensions si possible. Réponse rapide garantie.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">2</div>
+        <h3>Visite et devis</h3>
+        <p>Je me déplace sur place, j'évalue les travaux et vous envoie un devis détaillé et transparent.</p>
+      </div>
+      <div class="step reveal">
+        <div class="num">3</div>
+        <h3>Je m'en occupe</h3>
+        <p>Du premier coup de spatule à la dernière couche de peinture. Vous recevez des photos d'avancement régulières.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== À PROPOS ===== -->
+<section class="section about" id="apropos">
+  <div class="wrap about-inner">
+    <div class="reveal">
+      <p class="eyebrow">Qui je suis</p>
+      <h2>C'est Lola qui fait.</h2>
+      <p>Auto-entrepreneuse basée à Mérignac, je rénove les intérieurs des particuliers en Gironde avec une exigence simple : bien faire, durablement, sans laisser de trace à part le résultat.</p>
+      <p>Chaque projet est documenté sur Instagram et TikTok, pas pour faire joli — pour que vous voyiez exactement comment je travaille avant de m'appeler. La transparence, c'est ma façon de gagner votre confiance.</p>
+      <p class="about-values">Durable&nbsp;·&nbsp;Détail&nbsp;·&nbsp;Transparence</p>
+    </div>
+    <div class="reveal">
+      <div class="about-portrait">Portrait de Lola<br>(à remplacer)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TÉMOIGNAGES ===== -->
+<section class="section chips" id="temoignages">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Ils en parlent</p>
+      <h2>Ce qu'ils en disent.</h2>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testi reveal">
+        <div class="stars" aria-label="5 sur 5 étoiles">★★★★★</div>
+        <blockquote>Notre couloir était au papier peint des années 80. Lola a tout arraché, rebouché, peint. Impeccable. Et le bleu pétrole sur la porte d'entrée, c'est une folie.</blockquote>
+        <div class="dash"></div>
+        <cite>Mathilde C., Bordeaux · Couloir + porte</cite>
+      </div>
+
+      <div class="testi reveal">
+        <div class="stars" aria-label="5 sur 5 étoiles">★★★★★</div>
+        <blockquote>Le meuble de salle de bain relooké en médium est exactement ce que j'avais en tête. Travail soigné, bonne communication tout au long.</blockquote>
+        <div class="dash"></div>
+        <cite>Sébastien L., Mérignac · Relooking meuble</cite>
+      </div>
+
+      <div class="testi reveal">
+        <div class="stars" aria-label="5 sur 5 étoiles">★★★★★</div>
+        <blockquote>J'ai suivi ses rénovations sur TikTok, j'ai sauté le pas. Résultat au-delà des attentes, Lola est vraiment impliquée dans son travail.</blockquote>
+        <div class="dash"></div>
+        <cite>Camille R., Pessac · Rénovation chambre</cite>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="eyebrow">Démarrons un projet</p>
+      <h2>Parlons de votre chantier.</h2>
+      <p class="sub">Devis gratuit · Mérignac &amp; Gironde</p>
+    </div>
+    <div class="contact-grid">
+
+      <div class="dm-block reveal">
+        <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener" class="btn-dm-big" aria-label="Demander un devis en DM Instagram">📩 Demander un devis en DM</a>
+        <p class="or-sep">ou</p>
+        <a href="https://www.tiktok.com/@cestlolaquifait" target="_blank" rel="noopener" class="btn-tiktok" aria-label="Suivre mes chantiers sur TikTok">▶ Suivre mes chantiers sur TikTok</a>
+        <p class="dm-info">📍 Mérignac (33) · Gironde<br>🕐 Réponse rapide par DM</p>
+      </div>
+
+      <form action="#" method="post" class="reveal" aria-label="Formulaire de demande de devis">
+        <div class="field">
+          <label for="nom">Prénom &amp; Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        </div>
+        <div class="field">
+          <label for="tel">Téléphone</label>
+          <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="vous@email.fr" required>
+        </div>
+        <div class="field">
+          <label for="travaux">Type de travaux</label>
+          <select id="travaux" name="travaux">
+            <option>Peinture &amp; finitions</option>
+            <option>Relooking de porte</option>
+            <option>Relooking de meuble</option>
+            <option>Rénovation complète</option>
+            <option>Pose de cuisine</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="desc">Description</label>
+          <textarea id="desc" name="description" placeholder="Décrivez votre projet, la pièce, vos envies..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" aria-label="Envoyer mon projet">Envoyer mon projet</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="foot-logo">
+    <span class="l1">C'est Lola</span><span class="l2">qui fait</span>
+  </div>
+  <p class="foot-tag">Rénovation &amp; finitions durables · Mérignac (33)</p>
+  <div class="foot-social">
+    <a href="https://www.instagram.com/cestlolaquifait" target="_blank" rel="noopener" aria-label="Instagram @cestlolaquifait">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@cestlolaquifait" target="_blank" rel="noopener" aria-label="TikTok @cestlolaquifait">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4v9.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M15 4a4.5 4.5 0 0 0 4.5 4.5"/></svg>
+    </a>
+  </div>
+  <div class="foot-sep"></div>
+  <p class="foot-copy">© 2026 C'est Lola qui fait — Tous droits réservés</p>
+  <p class="foot-credit">Site réalisé par Payment Flow</p>
+</footer>
+
+<!-- ===== JS ===== -->
+<script>
+'use strict';
+
+/* Header shadow au scroll >60px */
+function handleHeaderShadow(){
+  const header = document.getElementById('header');
+  if(window.scrollY > 60){ header.classList.add('scrolled'); }
+  else{ header.classList.remove('scrolled'); }
+}
+window.addEventListener('scroll', handleHeaderShadow, { passive:true });
+
+/* Menu mobile overlay */
+function setupMobileMenu(){
+  const burger = document.getElementById('burger');
+  const overlay = document.getElementById('overlay');
+  const closeBtn = document.getElementById('overlayClose');
+
+  function openMenu(){
+    overlay.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    overlay.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+  }
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+}
+setupMobileMenu();
+
+/* Scroll reveal via IntersectionObserver + stagger */
+function setupReveal(){
+  const els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(el){ el.classList.add('revealed'); });
+    return;
+  }
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        const el = entry.target;
+        const siblings = Array.prototype.slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+        const idx = siblings.indexOf(el);
+        el.style.transitionDelay = (idx > 0 ? idx * 0.08 : 0) + 's';
+        el.classList.add('revealed');
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+  els.forEach(function(el){ observer.observe(el); });
+}
+setupReveal();
+
+/* Scrollspy — lien actif */
+function setupScrollspy(){
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(function(link){
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold:0.4 });
+  sections.forEach(function(s){ spy.observe(s); });
+}
+setupScrollspy();
+</script>
+
+</body>
+</html>
