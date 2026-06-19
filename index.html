@@ -138,15 +138,15 @@ header.scrolled{ box-shadow:0 2px 12px rgba(58,45,34,0.08); }
   padding:172px 24px 110px;
   min-height:88vh;
   display:flex; align-items:center;
-  /* Image de rénovation (Unsplash) + voile pétrole pour lisibilité.
-     Le 2e dégradé sert de fond de secours si l'image ne charge pas. */
+  /* Image de rénovation (Unsplash) + voile pétrole semi-transparent pour
+     la lisibilité du texte. background-color = fond de secours si l'image
+     ne charge pas (ne PAS mettre un dégradé opaque, il masquerait la photo). */
   background-color:var(--petrol);
   background-image:
-    linear-gradient(105deg, rgba(27,58,75,0.82) 0%, rgba(27,58,75,0.55) 45%, rgba(27,58,75,0.15) 100%),
-    linear-gradient(135deg, var(--bark) 0%, var(--petrol) 60%, var(--shaving) 130%),
+    linear-gradient(105deg, rgba(27,58,75,0.85) 0%, rgba(27,58,75,0.55) 45%, rgba(27,58,75,0.18) 100%),
     url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=80");
-  background-size:cover, cover, cover;
-  background-position:center, center, center;
+  background-size:cover, cover;
+  background-position:center, center;
 }
 .hero-inner{
   position:relative; z-index:2;
